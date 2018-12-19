@@ -1,0 +1,7 @@
+border_collie
+chihuahua
+golden_retriever
+pembroke
+pomeranian
+pug
+toy_poodle
