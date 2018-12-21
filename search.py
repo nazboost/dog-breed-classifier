@@ -36,8 +36,10 @@ def search(keyword):
 
 def dog_breed_check(keyword):
     """ Convert word for search on wikipedia. """
+    # FIXME: Still remain bugs.
     if keyword == 'pembroke':
         return 'corgi'
+
     return keyword
 
 
@@ -50,11 +52,12 @@ def translate_en2ja(keyword):
 
 
 if __name__ == "__main__":
-    """ Sample usage. """
-    if len(sys.argv) == 1:
-        keyword = 'pembroke'
-    else:
-        keyword = sys.argv[1]
+    breeds = []
+    with open('./model/breeds_16.txt') as f:
+        lines = f.readlines()
+        for line in lines:
+            breeds.append(line.replace('\n', ''))
 
-    print(keyword)
-    print(search(keyword))
+    for breed in breeds:
+        print(breed)
+        print(search(breed))

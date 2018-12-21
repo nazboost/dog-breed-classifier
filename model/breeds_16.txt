@@ -1,0 +1,16 @@
+beagle
+border_collie
+borzoi
+chihuahua
+doberman
+french_bulldog
+german_shepherd
+golden_retriever
+maltese_dog
+pembroke
+pomeranian
+pug
+shih-tzu
+siberian_husky
+toy_poodle
+yorkshire_terrier

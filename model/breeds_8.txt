@@ -1,5 +1,6 @@
 border_collie
 chihuahua
+doberman
 golden_retriever
 pembroke
 pomeranian

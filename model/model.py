@@ -15,9 +15,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image, ImageFont, ImageDraw
 
-from .yolo.yolo import Yolo
-from .yolo.yolo_model import yolo_eval, yolo_body, tiny_yolo_body
-from .yolo.yolo_utils import letterbox_image
+try:
+    from yolo.yolo import Yolo
+    from yolo.yolo_model import yolo_eval, yolo_body, tiny_yolo_body
+    from yolo.yolo_utils import letterbox_image
+except ModuleNotFoundError:
+    from .yolo.yolo import Yolo
+    from .yolo.yolo_model import yolo_eval, yolo_body, tiny_yolo_body
+    from .yolo.yolo_utils import letterbox_image
 
 INPUT_SIZE = 299
 
@@ -100,7 +105,6 @@ if __name__ == "__main__":
 
     image_bgr = cv2.imread(
         './data/raw/golden_retriever/golden_retriever_020.jpg')
-    # image_bgr = cv2.imread('./sample/sample.jpg')
 
     image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
     image_pil = Image.fromarray(np.uint8(image_rgb))

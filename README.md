@@ -14,19 +14,22 @@ Detect dogs in real time and discriminate breeds.
 ├── app_widget.py
 ├── icon.png
 ├── model
-│   ├── breeds.txt
+│   ├── breeds_8.txt
+│   ├── breeds_16.txt
 │   ├── cfg
 │   │   ├── darknet53.cfg
 │   │   └── yolov3.cfg
 │   ├── classification
-│   │   ├── [model.h5]
-│   │   ├── train.ipynb
-│   │   └── train_7_breeds.html
+│   │   ├── [model_8.h5]
+│   │   ├── [model_16.h5]
+│   │   ├── train_8.pdf
+│   │   ├── train_16.pdf
+│   │   └── train.ipynb
 │   ├── data
 │   │   ├── crop
-│   │   │   └── border_collie
-│   │   │       ├── border_collie_000_0.jpg
-│   │   │       ├── border_collie_001_0.jpg
+│   │   │   └── beagle
+│   │   │       ├── beagle_000_0.jpg
+│   │   │       ├── beagle_001_0.jpg
 │   │   │       └── ...
 │   │   └── raw
 │   │       └── affenpinscher
@@ -37,19 +40,19 @@ Detect dogs in real time and discriminate breeds.
 │   │   ├── FiraMono-Medium.otf
 │   │   └── SIL Open Font License.txt
 │   ├── model.py
-│   ├── model_out.jpg
 │   ├── sample
 │   │   ├── sample.jpg
 │   │   └── sample.mp4
-│   └── yolo
-│       ├── convert.py
-│       ├── yolo.py
-│       ├── yolo_data
-│       │   ├── coco_classes.txt
-│       │   ├── [yolo.h5]
-│       │   └── yolo_anchors.txt
-│       ├── yolo_model.py
-│       └── yolo_utils.py
+│   ├── yolo
+│   |   ├── convert.py
+│   |   ├── yolo.py
+│   |   ├── yolo_data
+│   |   │   ├── coco_classes.txt
+│   |   │   ├── [yolo.h5]
+│   |   │   └── yolo_anchors.txt
+│   |   ├── yolo_model.py
+│   |   └── yolo_utils.py
+|   └── yolo_crop.py  
 ├── requirements.txt
 ├── search.py
 ├── sex_classifier

@@ -27,7 +27,7 @@ INPUT_SIZE = 299
 model = None
 icon_path = './design/icon.png'
 splash_pix_path = './design/splash_pix.jpg'
-model_path = './model/classification/model.h5'
+model_path = './model/classification/model_16.h5'
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -97,7 +97,7 @@ class VideoCaptureView(QtWidgets.QGraphicsView, DetectDogs):
         self.rect_items = []
 
         self.breeds = []
-        with open('./model/breeds.txt') as f:
+        with open('./model/breeds_16.txt') as f:
             lines = f.readlines()
             for line in lines:
                 self.breeds.append(line.replace('\n', ''))
