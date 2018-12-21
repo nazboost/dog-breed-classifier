@@ -1,5 +1,7 @@
 """
 Detect dogs in real time and discriminate breeds.
+
+Usage: python3 app.py [--video=path/to/video]
 """
 
 import argparse
