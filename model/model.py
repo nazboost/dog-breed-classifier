@@ -40,7 +40,7 @@ class DetectDogs(Yolo):
                 Each row has cordinates of rentangle.
         """
 
-        # over ride  of parent's method
+        # Over ride of parent's method
         if self.model_image_size != (None, None):
             assert self.model_image_size[0] % 32 == 0, 'Multiples of 32 required.'
             assert self.model_image_size[1] % 32 == 0, 'Multiples of 32 required.'
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
     out = image_bgr
     for coordinate in coordinates:
-        image_crop = image_bgr[coordinate[1]                               :coordinate[3], coordinate[0]:coordinate[2]]
+        image_crop = image_bgr[coordinate[1]:coordinate[3], coordinate[0]:coordinate[2]]
 
         image_crop = cv2.resize(image_crop, (INPUT_SIZE, INPUT_SIZE)) / 255
 

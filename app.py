@@ -25,7 +25,8 @@ from search import search
 INPUT_SIZE = 299
 
 model = None
-icon_path = './icon.png'
+icon_path = './design/icon.png'
+splash_pix_path = './design/splash_pix.jpg'
 model_path = './model/classification/model.h5'
 
 
@@ -262,7 +263,7 @@ def main():
     main_window.setWindowTitle('Breed Classifier')
 
     # Show loading secreen.
-    splash_pix = QtGui.QPixmap(icon_path)
+    splash_pix = QtGui.QPixmap(splash_pix_path)
     splash = QtWidgets.QSplashScreen(
         splash_pix, QtCore.Qt.WindowStaysOnBottomHint)
     splash.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint |
@@ -271,12 +272,12 @@ def main():
 
     progress_bar = QtWidgets.QProgressBar(splash)
     progress_bar.setMaximum(100)
-    progress_bar.setGeometry(0, splash_pix.height() -
-                             50, splash_pix.width(), 20)
+    progress_bar.setGeometry(10, splash_pix.height() -
+                             40, splash_pix.width() - 20, 20)
 
     splash.show()
     splash.showMessage(
-        "<h1><font color='white'>Loading classification model...</font></h1>",
+        "<h2><font color='white' face='arial black'>Loading classification model...</font></h2>",
         QtCore.Qt.AlignTop | QtCore.Qt.AlignCenter,
         QtCore.Qt.black)
 
@@ -290,7 +291,7 @@ def main():
     model = load_model(model_path)
 
     splash.showMessage(
-        "<h1><font color='white'>Loading yolo model...</font></h1>",
+        "<h2><font color='white' face='arial black'>Loading yolo model...</font></h2>",
         QtCore.Qt.AlignTop | QtCore.Qt.AlignCenter,
         QtCore.Qt.black)
 

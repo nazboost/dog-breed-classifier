@@ -1,5 +1,8 @@
 # Dog Breeds Classifier
 
+## Overvies
+Detect dogs in real time and discriminate breeds.  
+
 ## Flowchart
 ![flowchart](https://i.imgur.com/cKUVat8.png)
 
@@ -38,16 +41,15 @@
 │   ├── sample
 │   │   ├── sample.jpg
 │   │   └── sample.mp4
-│   ├── yolo
-│   │   ├── convert.py
-│   │   ├── yolo.py
-│   │   ├── yolo_data
-│   │   │   ├── coco_classes.txt
-│   │   │   ├── [yolo.h5]
-│   │   │   └── yolo_anchors.txt
-│   │   ├── yolo_model.py
-│   │   └── yolo_utils.py
-│   └── yolo_detect_and_crop.py
+│   └── yolo
+│       ├── convert.py
+│       ├── yolo.py
+│       ├── yolo_data
+│       │   ├── coco_classes.txt
+│       │   ├── [yolo.h5]
+│       │   └── yolo_anchors.txt
+│       ├── yolo_model.py
+│       └── yolo_utils.py
 ├── requirements.txt
 ├── search.py
 ├── sex_classifier
@@ -58,10 +60,7 @@
 │   ├── sex_classification_webcam.ipynb
 │   ├── sex_classification_webcam.py
 │   └── sex_classification_webcam_qt.py
-├── translation.gs
-└── view
-    ├── gui_test.py
-    └── view.py
+└── translation.gs
 ```
 
 ## Model Files
@@ -71,3 +70,6 @@ Download from below.
 
 ## Introduction Slides
 * [slides](https://docs.google.com/presentation/d/1l0LN2YL9Yo8Kis8--WkkkermDjyC0KMCYUctEZanW28/edit?usp=sharing)
+
+## Screenshots
+![screenshot](design/screenshot.png)
