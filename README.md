@@ -68,7 +68,8 @@ Detect dogs in real time and discriminate breeds.
 
 ## Model Files
 Download from below.
-* [model.h5](https://www.dropbox.com/s/q0kyzz67yeixkph/model.h5?dl=0)  
+* [model_8.h5](https://www.dropbox.com/s/xrgtlmhg6r6dfet/model_8.h5?dl=0)  
+* [model_16.h5](https://www.dropbox.com/s/ts5bpsy74zuymwv/model_16.h5?dl=0)  
 * [yolo.h5](https://www.dropbox.com/s/kozt3gbk5l5ucde/yolo.h5?dl=0)  
 
 ## Introduction Slides
