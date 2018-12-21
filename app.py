@@ -260,7 +260,7 @@ def main():
     app.setWindowIcon(QtGui.QIcon(icon_path))
 
     main_window = MainWindow()
-    main_window.setWindowTitle('Breed Classifier')
+    main_window.setWindowTitle('Dog Breeds Classifier')
 
     # Show loading secreen.
     splash_pix = QtGui.QPixmap(splash_pix_path)
