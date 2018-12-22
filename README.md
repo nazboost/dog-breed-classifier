@@ -3,6 +3,21 @@
 ## Overvies
 Detect dogs in real time and discriminate breeds.  
 
+## Usage
+```
+pip3 install -r requirements.txt
+python3 app.py [video=path/to/video]
+```
+
+## Model Files
+Download from below.
+* [model_8.h5](https://www.dropbox.com/s/ol3w28b8onl23xa/model_8.h5?dl=0)  
+* [model_16.h5](https://www.dropbox.com/s/btpeb738uk3mikq/model_16.h5?dl=0)  
+* [yolo.h5](https://www.dropbox.com/s/kozt3gbk5l5ucde/yolo.h5?dl=0)  
+
+## Introduction Slides
+* [slides](https://docs.google.com/presentation/d/1l0LN2YL9Yo8Kis8--WkkkermDjyC0KMCYUctEZanW28/edit?usp=sharing)
+
 ## Flowchart
 ![flowchart](https://i.imgur.com/cKUVat8.png)
 
@@ -65,15 +80,6 @@ Detect dogs in real time and discriminate breeds.
 │   └── sex_classification_webcam_qt.py
 └── translation.gs
 ```
-
-## Model Files
-Download from below.
-* [model_8.h5](https://www.dropbox.com/s/xrgtlmhg6r6dfet/model_8.h5?dl=0)  
-* [model_16.h5](https://www.dropbox.com/s/ts5bpsy74zuymwv/model_16.h5?dl=0)  
-* [yolo.h5](https://www.dropbox.com/s/kozt3gbk5l5ucde/yolo.h5?dl=0)  
-
-## Introduction Slides
-* [slides](https://docs.google.com/presentation/d/1l0LN2YL9Yo8Kis8--WkkkermDjyC0KMCYUctEZanW28/edit?usp=sharing)
 
 ## Screenshots
 ![screenshot](design/screenshot.png)
