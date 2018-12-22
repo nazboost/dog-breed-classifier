@@ -19,7 +19,7 @@ from PyQt5 import QtGui
 from PyQt5 import QtWidgets
 import seaborn as sns
 
-from dynamodb import Dynamodb
+from dynamodb.dynamodb import Dynamodb
 from model.model import DetectDogs
 
 INPUT_SIZE = 299

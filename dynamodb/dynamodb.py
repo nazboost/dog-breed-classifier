@@ -8,6 +8,7 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./di
 import boto3
 import decimal
 import json
+import os
 from urllib.parse import unquote
 
 
@@ -22,7 +23,8 @@ class Dynamodb(object):
         )
 
         self.breeds = []
-        with open('../model/breeds_16.txt') as f:
+        with open(os.path.join(os.path.abspath(
+                os.path.dirname(__file__)), '../model/breeds_16.txt')) as f:
             lines = f.readlines()
             for line in lines:
                 self.breeds.append(line.replace('\n', ''))
