@@ -19,8 +19,8 @@ from PyQt5 import QtGui
 from PyQt5 import QtWidgets
 import seaborn as sns
 
+from dynamodb import Dynamodb
 from model.model import DetectDogs
-from search import search
 
 INPUT_SIZE = 299
 
@@ -63,9 +63,16 @@ class MainWindow(QtWidgets.QMainWindow):
             frame_pil = Image.open(file_name)
 
 
-class SubWindow(QtWidgets.QWidget):
+class SubWindow(QtWidgets.QWidget, Dynamodb):
     # TODO: Set window title.
-    def __init__(self, parent=None, keyword=None):
+    def __init__(self, parent=None, breed_id=None):
+        """
+        Sub Window settings.
+
+        Args:
+            breed_id (int): Index of targe keyword
+        """
+
         super(SubWindow, self).__init__(parent)
 
         self.sub_window = QtWidgets.QDialog(parent)
@@ -73,10 +80,10 @@ class SubWindow(QtWidgets.QWidget):
         # self.setWindowTitle('Dog Breed Details')
 
         text_browser = QtWidgets.QTextBrowser()
-        if keyword:
-            text_browser.setPlainText(search(keyword))
+        if breed_id:
+            text_browser.setPlainText(self.load_data('Breeds', breed_id))
         else:
-            text_browser.setPlainText('Keyword is not set.')
+            text_browser.setPlainText("Couldn't search.")
 
         layout = QtWidgets.QHBoxLayout()
         layout.addWidget(text_browser)
@@ -127,7 +134,7 @@ class VideoCaptureView(QtWidgets.QGraphicsView, DetectDogs):
 
     def make_sub_window(self):
         # TODO: Corresponds when two or more dogs are detected.
-        sub_window = SubWindow(keyword=self.breed_label)
+        sub_window = SubWindow(breed_id=self.breeds.index(self.breed_label))
         sub_window.show()
 
     def keyPressEvent(self, event):

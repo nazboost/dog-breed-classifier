@@ -15,6 +15,12 @@ Download from below.
 * [model_16.h5](https://www.dropbox.com/s/btpeb738uk3mikq/model_16.h5?dl=0)  
 * [yolo.h5](https://www.dropbox.com/s/kozt3gbk5l5ucde/yolo.h5?dl=0)  
 
+## Database
+* [DynamoDB Local](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
+```
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./dir/path/to/db
+```
+
 ## Introduction Slides
 * [slides](https://docs.google.com/presentation/d/1l0LN2YL9Yo8Kis8--WkkkermDjyC0KMCYUctEZanW28/edit?usp=sharing)
 
@@ -27,6 +33,10 @@ Download from below.
 ├── README.md
 ├── app.py
 ├── app_widget.py
+├── dynamodb
+│   ├── data.json
+│   ├── dog_breeds.db
+│   └── dynamodb.py
 ├── icon.png
 ├── model
 │   ├── breeds_8.txt
@@ -69,7 +79,6 @@ Download from below.
 │   |   └── yolo_utils.py
 |   └── yolo_crop.py  
 ├── requirements.txt
-├── search.py
 ├── sex_classifier
 │   ├── haarcascade_frontalface_default.xml
 │   ├── make_model.ipynb
