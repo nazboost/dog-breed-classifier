@@ -1,7 +1,7 @@
 """
 Detect dogs in real time and discriminate breeds.
 
-Usage: python3 app.py [--video=path/to/video]
+Usage: python3 app.py [label=path/to/label] [model=path/to/model] [video=path/to/video]
 """
 
 import argparse
@@ -25,9 +25,10 @@ from model.model import DetectDogs
 INPUT_SIZE = 299
 
 model = None
+model_path = None
+label_path = None
 icon_path = './design/icon.png'
 splash_pix_path = './design/splash_pix.jpg'
-model_path = './model/classification/model_16.h5'
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -104,7 +105,8 @@ class VideoCaptureView(QtWidgets.QGraphicsView, DetectDogs):
         self.rect_items = []
 
         self.breeds = []
-        with open('./model/breeds_16.txt') as f:
+        global label_path
+        with open(label_path) as f:
             lines = f.readlines()
             for line in lines:
                 self.breeds.append(line.replace('\n', ''))
@@ -251,12 +253,31 @@ def main():
     parser = argparse.ArgumentParser(argument_default=argparse.SUPPRESS)
 
     parser.add_argument(
+        '--label',
+        default='model/breeds_16.txt',
+        type=str,
+        help='path to classification label (default: model_16.txt)')
+
+    parser.add_argument(
+        '--model',
+        default='model/classification/model_16.h5',
+        type=str,
+        help='path to classification model (default: model_16.h5)')
+
+    parser.add_argument(
         '--video',
         default=False,
         type=str,
         help='path to video to use instead of web camera')
 
     FLAGS = parser.parse_args()
+
+    global label_path
+    label_path = FLAGS.label
+
+    global model_path
+    model_path = FLAGS.model
+
     if FLAGS.video:
         video_path = FLAGS.video
     else:

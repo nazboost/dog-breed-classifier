@@ -129,5 +129,9 @@ if __name__ == "__main__":
     # dynamodb.create_table('Breeds')
     # dynamodb.add_data('Breeds', 'data.json')
 
-    print(dynamodb.load_data('Breeds', 4))
-    print(dynamodb.load_data('Breeds', 10))
+    # print(dynamodb.load_data('Breeds', 4))
+    # print(dynamodb.load_data('Breeds', 10))
+
+    for i in range(16):
+        print(dynamodb.load_data('Breeds', i))
+        print()

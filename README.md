@@ -6,7 +6,7 @@ Detect dogs in real time and discriminate breeds.
 ## Usage
 ```
 pip3 install -r requirements.txt
-python3 app.py [video=path/to/video]
+python3 app.py [label=path/to/label] [model=path/to/model] [video=path/to/video]
 ```
 
 ## Model Files
@@ -79,15 +79,14 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./di
 │   |   └── yolo_utils.py
 |   └── yolo_crop.py  
 ├── requirements.txt
-├── sex_classifier
-│   ├── haarcascade_frontalface_default.xml
-│   ├── make_model.ipynb
-│   ├── make_model.py
-│   ├── model.h5
-│   ├── sex_classification_webcam.ipynb
-│   ├── sex_classification_webcam.py
-│   └── sex_classification_webcam_qt.py
-└── translation.gs
+└── sex_classifier
+    ├── haarcascade_frontalface_default.xml
+    ├── make_model.ipynb
+    ├── make_model.py
+    ├── model.h5
+    ├── sex_classification_webcam.ipynb
+    ├── sex_classification_webcam.py
+    └── sex_classification_webcam_qt.py
 ```
 
 ## Screenshots
