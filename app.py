@@ -66,12 +66,12 @@ class MainWindow(QtWidgets.QMainWindow):
 
 class SubWindow(QtWidgets.QWidget, Dynamodb):
     # TODO: Set window title.
-    def __init__(self, parent=None, breed_id=None):
+    def __init__(self, parent=None, breed_name=None):
         """
         Sub Window settings.
 
         Args:
-            breed_id (int): Index of targe keyword
+            breed_name (str): Name of targe keyword
         """
 
         super(SubWindow, self).__init__(parent)
@@ -81,8 +81,8 @@ class SubWindow(QtWidgets.QWidget, Dynamodb):
         # self.setWindowTitle('Dog Breed Details')
 
         text_browser = QtWidgets.QTextBrowser()
-        if breed_id:
-            text_browser.setPlainText(self.load_data('Breeds', breed_id))
+        if breed_name:
+            text_browser.setPlainText(self.load_data('Breeds', breed_name))
         else:
             text_browser.setPlainText("Couldn't search.")
 
@@ -136,7 +136,7 @@ class VideoCaptureView(QtWidgets.QGraphicsView, DetectDogs):
 
     def make_sub_window(self):
         # TODO: Corresponds when two or more dogs are detected.
-        sub_window = SubWindow(breed_id=self.breeds.index(self.breed_label))
+        sub_window = SubWindow(breed_name=self.breed_label)
         sub_window.show()
 
     def keyPressEvent(self, event):

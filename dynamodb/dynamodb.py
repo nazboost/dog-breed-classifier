@@ -22,13 +22,6 @@ class Dynamodb(object):
             aws_secret_access_key='_'
         )
 
-        self.breeds = []
-        with open(os.path.join(os.path.abspath(
-                os.path.dirname(__file__)), '../model/breeds_16.txt')) as f:
-            lines = f.readlines()
-            for line in lines:
-                self.breeds.append(line.replace('\n', ''))
-
     def create_table(self, table_name):
         """
         Create database table.
@@ -41,19 +34,11 @@ class Dynamodb(object):
             TableName=table_name,
             KeySchema=[
                 {
-                    'AttributeName': 'breed_id',
-                    'KeyType': 'HASH'  # Partition key
-                },
-                {
                     'AttributeName': 'breed_name',
-                    'KeyType': 'RANGE'  # Sort key
+                    'KeyType': 'HASH'
                 }
             ],
             AttributeDefinitions=[
-                {
-                    'AttributeName': 'breed_id',
-                    'AttributeType': 'N'
-                },
                 {
                     'AttributeName': 'breed_name',
                     'AttributeType': 'S'
@@ -75,7 +60,7 @@ class Dynamodb(object):
 
         Args:
             table_name (str): Table's name
-            json_path (str): Json file path written data (breed_id, breed_name, description).
+            json_path (str): Json file path written data (breed_name, description).
         """
 
         table = self.dynamodb.Table(table_name)
@@ -83,36 +68,32 @@ class Dynamodb(object):
         with open(json_path) as json_file:
             breeds = json.load(json_file, parse_float=decimal.Decimal)
             for breed in breeds:
-                breed_id = int(breed['breed_id'])
                 breed_name = breed['breed_name']
                 description = breed['description']
 
-                print("Adding breed:", breed_id, breed_name)
+                print("Adding breed:", breed_name)
 
                 table.put_item(
                     Item={
-                        'breed_id': breed_id,
                         'breed_name': breed_name,
                         'description': description,
                     }
                 )
 
-    def load_data(self, table_name, breed_id):
+    def load_data(self, table_name, breed_name):
         """
         Load data from database.
 
         Args:
             table_name (str): Table's name
-            breed_id (int): Index of targe keyword
+            breed_name (str): Name of targe keyword
         """
 
         table = self.dynamodb.Table(table_name)
-        breed_name = self.breeds[breed_id]
 
         try:
             response = table.get_item(
                 Key={
-                    'breed_id': breed_id,
                     'breed_name': breed_name
                 }
             )
@@ -129,9 +110,5 @@ if __name__ == "__main__":
     # dynamodb.create_table('Breeds')
     # dynamodb.add_data('Breeds', 'data.json')
 
-    # print(dynamodb.load_data('Breeds', 4))
-    # print(dynamodb.load_data('Breeds', 10))
-
-    for i in range(16):
-        print(dynamodb.load_data('Breeds', i))
-        print()
+    print(dynamodb.load_data('Breeds', 'border_collie'))
+    print(dynamodb.load_data('Breeds', 'pembroke'))
