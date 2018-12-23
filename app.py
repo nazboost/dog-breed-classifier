@@ -289,6 +289,7 @@ def main():
 
     main_window = MainWindow()
     main_window.setWindowTitle('Dog Breeds Classifier')
+    main_window.move(480, 270)
 
     # Show loading secreen.
     splash_pix = QtGui.QPixmap(splash_pix_path)
