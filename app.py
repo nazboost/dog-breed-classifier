@@ -288,7 +288,7 @@ def main():
     app.setWindowIcon(QtGui.QIcon(icon_path))
 
     main_window = MainWindow()
-    main_window.setWindowTitle('Dog Breeds Classifier')
+    main_window.setWindowTitle('Dog Breed Classifier')
     main_window.move(480, 270)
 
     # Show loading secreen.

@@ -1,4 +1,4 @@
-# Dog Breeds Classifier
+# Dog Breed Classifier
 
 ## Overvies
 Detect dogs in real time and discriminate breeds.  
