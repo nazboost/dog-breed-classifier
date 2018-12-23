@@ -78,15 +78,7 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./di
 │   |   ├── yolo_model.py
 │   |   └── yolo_utils.py
 |   └── yolo_crop.py  
-├── requirements.txt
-└── sex_classifier
-    ├── haarcascade_frontalface_default.xml
-    ├── make_model.ipynb
-    ├── make_model.py
-    ├── model.h5
-    ├── sex_classification_webcam.ipynb
-    ├── sex_classification_webcam.py
-    └── sex_classification_webcam_qt.py
+└── requirements.txt
 ```
 
 ## Screenshots
