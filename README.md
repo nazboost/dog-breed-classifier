@@ -1,6 +1,6 @@
 # Dog Breed Classifier
 
-## Overvies
+## Overviews
 Detect dogs in real time and discriminate breeds.  
 
 ## Usage
@@ -20,6 +20,9 @@ Download from below.
 ```
 java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./dir/path/to/db
 ```
+
+## Datasets
+* [Dog Breed Identification - Kaggle](https://www.kaggle.com/c/dog-breed-identification)
 
 ## Introduction Slides
 * [slides](https://docs.google.com/presentation/d/1l0LN2YL9Yo8Kis8--WkkkermDjyC0KMCYUctEZanW28/edit?usp=sharing)
