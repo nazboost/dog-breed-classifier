@@ -24,9 +24,6 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./di
 ## Datasets
 * [Dog Breed Identification - Kaggle](https://www.kaggle.com/c/dog-breed-identification)
 
-## Introduction Slides
-* [slides](https://docs.google.com/presentation/d/1l0LN2YL9Yo8Kis8--WkkkermDjyC0KMCYUctEZanW28/edit?usp=sharing)
-
 ## Directory Structure
 ```
 .
