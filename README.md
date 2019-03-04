@@ -1,6 +1,6 @@
 # Dog Breed Classifier
 
-## Overviews
+## Overview
 Detect dogs in real time and discriminate breeds.  
 
 ## Usage
@@ -9,7 +9,7 @@ pip3 install -r requirements.txt
 python3 app.py [label=path/to/label] [model=path/to/model] [video=path/to/video]
 ```
 
-## Model Files
+## Model File
 Download from below.
 * [model_8.h5](https://www.dropbox.com/s/ol3w28b8onl23xa/model_8.h5?dl=0)  
 * [model_16.h5](https://www.dropbox.com/s/btpeb738uk3mikq/model_16.h5?dl=0)  
@@ -21,7 +21,7 @@ Download from below.
 java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./dir/path/to/db
 ```
 
-## Datasets
+## Dataset
 * [Dog Breed Identification - Kaggle](https://www.kaggle.com/c/dog-breed-identification)
 
 ## Directory Structure
@@ -78,5 +78,8 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -dbPath ./di
 └── requirements.txt
 ```
 
-## Screenshots
+## Screenshot
 ![screenshot](design/screenshot.png)
+
+## Demo
+[![demo](https://img.youtube.com/vi/wk9e7He_Lgc/0.jpg)](https://www.youtube.com/watch?v=wk9e7He_Lgc)
